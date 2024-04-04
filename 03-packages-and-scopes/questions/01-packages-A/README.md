@@ -30,7 +30,7 @@
 
 ## Which one is a correct usage of `package clause`?
 1. `my package`
-2. `package main`
+2. `package main` √
 3. `pkg main`
 
 
@@ -43,7 +43,7 @@
 1. go run *.*go
 2. go build *go
 3. go run go
-4. go run *.go *CORRECT*
+4. go run *.go *CORRECT* √
 
 > **4:** You can also call it like (assuming there are file1.go file2.go and file3.go in the same directory): go run file1.go file2.go file3.go
 >

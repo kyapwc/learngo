@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	f "fmt"
+	format "fmt"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Rename imports
 //
@@ -29,4 +35,7 @@ func main() {
 	// ?
 	// ?
 	// ?
+	fmt.Println("Hello using `normal` import")
+	format.Println("Hello using named import `format`")
+	f.Println("Hello using named import `f`")
 }
