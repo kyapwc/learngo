@@ -4,7 +4,7 @@ Hi!
 
 If you're an experienced developer, you may want to watch only the following lectures. If you follow this roadmap, you will need to watch about 50 lectures instead of 180 lectures.
 
-This course starts from the most basics than advances toward the end, step by step. So, the complexity of the topics increases on each level. I've intentionally designed it so to make it easy for everyone. 
+This course starts from the most basics than advances toward the end, step by step. So, the complexity of the topics increases on each level. I've intentionally designed it so to make it easy for everyone.
 
 If you think some of the topics are easy for you, then watch the recap lectures, take the quizzes and exercises, and even skip the lectures in that section altogether, you can always come back to them later.
 
@@ -138,9 +138,9 @@ Reference: [This Reddit post](https://www.reddit.com/r/golang/comments/5nac2b/wh
 <div style="page-break-after: always;"></div>
 
 > For more tutorials: [https://blog.learngoprogramming.com](https://blog.learngoprogramming.com)
-> 
+>
 > Copyright © 2019 Inanc Gumus
-> 
+>
 > Learn Go Programming Course
-> 
+>
 > [Click here to read the license.](https://creativecommons.org/licenses/by-nc-sa/4.0/)
