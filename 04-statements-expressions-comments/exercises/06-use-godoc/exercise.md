@@ -6,3 +6,7 @@
 ## HINT
 
 You should use correct `go doc` tools
+
+```sh
+go doc runtime.NumCpu
+```
