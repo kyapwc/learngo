@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Age Seasons
 //
@@ -27,9 +33,41 @@ package main
 //    Booting up
 // ---------------------------------------------------------
 
+var usage = `
+Age Seasons
+---------------------------------------------------------
+Please provide an age variable.
+
+Usage: go run main.go [age]
+`
+
 func main() {
 	// Change this accordingly to produce the expected outputs
-	// age := 10
+	args := os.Args
+
+	if len(args) < 2 {
+		fmt.Println(usage)
+		return
+	}
+
+	age, err := strconv.Atoi(args[1])
+
+	if err != nil {
+		fmt.Println("Failed to convert age, with err: ", err)
+
+		return
+	}
 
 	// Type your if statement here.
+	if age > 10 && age < 20 {
+		fmt.Println("Young blood")
+	} else if age > 20 && age < 30 {
+		fmt.Println("Adulthood")
+	} else if age > 30 && age < 60 {
+		fmt.Println("Getting wiser")
+	} else if age > 60 {
+		fmt.Println("Getting older")
+	} else {
+		fmt.Println("Booting up")
+	}
 }

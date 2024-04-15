@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Vowel or Consonant
 //
@@ -50,4 +56,35 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var (
+		args   = os.Args
+		length = len(args)
+	)
+
+	if length < 2 || len(args[1]) != 1 {
+		fmt.Println("Give me a letter")
+
+		return
+	}
+
+	value := args[1]
+
+	// 2 ways to achieve this exercise
+	// using strings.IndexAny will check the value has any of aeiou
+	if strings.IndexAny(value, "aeiou") != -1 {
+		fmt.Printf("%q is a vowel.\n", value)
+	} else if value == "w" || value == "y" {
+		fmt.Printf("%q is sometimes a vowel, sometimes not.\n", value)
+	} else {
+		fmt.Printf("%q is a consonant.\n", value)
+	}
+
+	// this has more complicated if statement that is harder to read
+	// if value == "a" || value == "e" || value == "i" || value == "o" || value == "u" {
+	// 	fmt.Printf("%q is a vowel.\n", value)
+	// } else if value == "w" || value == "y" {
+	// 	fmt.Printf("%q is sometimes a vowel, sometimes not.\n", value)
+	// } else {
+	// 	fmt.Printf("%q is a consonant.\n", value)
+	// }
 }
