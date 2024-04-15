@@ -8,6 +8,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Constant Length
 //
@@ -33,4 +35,9 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const home = "Milky Way Galaxy"
+
+	const length = len(home)
+
+	fmt.Printf("The %v home has a length of: %v", home, length)
 }

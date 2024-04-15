@@ -8,6 +8,11 @@
 
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: No Conversions Allowed
 //
@@ -18,10 +23,14 @@ package main
 //  10h0m0s later...
 // ---------------------------------------------------------
 
+// explanation:
+// due to the `later` being declared an `int`
+// and hours is having a time.Duration type
+// the multiplication cannot work on 2 different types
 func main() {
-	// const later int = 10
+	const later = 10
 
-	// hours, _ := time.ParseDuration("1h")
+	hours, _ := time.ParseDuration("1h")
 
-	// fmt.Printf("%s later...\n", hours*later)
+	fmt.Printf("%s later...\n", hours*later)
 }

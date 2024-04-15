@@ -102,9 +102,9 @@ fmt.Print(int64(total) * x)
 ## What are the values of the following constants?
 ```go
 const (
-    Yes = (iota * 5) + 2
-    No
-    Both
+    Yes = (iota * 5) + 2 // 2
+    No // 7
+    Both // 12
 )
 ```
 1. Yes=0 No=1 Both=2

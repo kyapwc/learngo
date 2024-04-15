@@ -25,11 +25,13 @@ import "fmt"
 func main() {
 	// NOTE : You should remove all the initializers below
 	//        first. Then use iota to fix it.
+	// iota starts from 0
+
 	const (
-		Winter = 12
-		Spring = 3
-		Summer = 6
-		Fall   = 9
+		Spring = (iota + 1) * 3
+		Summer
+		Fall
+		Winter
 	)
 
 	fmt.Println(Winter, Spring, Summer, Fall)
