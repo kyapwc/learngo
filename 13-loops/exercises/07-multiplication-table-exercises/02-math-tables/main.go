@@ -8,6 +8,13 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Math Tables
 //
@@ -104,5 +111,74 @@ package main
 //     go run main.go "*" 4
 // ---------------------------------------------------------
 
+const usage = `
+Usage: [op=*/+-] [size]
+`
+
+const invalidOp = `
+Invalid operator.
+Valid ops one of */+-
+`
+
+const sizeMissing = `
+Size is Missing
+` + usage
+
 func main() {
+	args := os.Args
+
+	if len(args) < 3 {
+		fmt.Println(usage)
+		return
+	}
+
+	operation := args[1]
+	size, err := strconv.Atoi(args[2])
+
+	if strings.IndexAny(operation, "*/+-%") == -1 {
+		fmt.Println(invalidOp)
+		return
+	}
+
+	if err != nil || size <= 0 {
+		fmt.Println("Wrong size")
+		return
+	}
+
+	// print horizontal header first
+	fmt.Printf("%5s", operation)
+	for i := 0; i <= size; i++ {
+		fmt.Printf("%5d", i)
+	}
+	fmt.Println()
+
+	for i := 0; i <= size; i++ {
+		// print vertical header later
+		fmt.Printf("%5d", i)
+
+		// print the row data
+		for j := 0; j <= size; j++ {
+			rowVal := 0
+
+			switch operation {
+			case "/":
+				if j != 0 {
+					rowVal = i / j
+				}
+			case "*":
+				rowVal = i * j
+			case "+":
+				rowVal = i + j
+			case "-":
+				rowVal = i - j
+			case "%":
+				if j != 0 {
+					rowVal = i % j
+				}
+			}
+
+			fmt.Printf("%5d", rowVal)
+		}
+		fmt.Println()
+	}
 }

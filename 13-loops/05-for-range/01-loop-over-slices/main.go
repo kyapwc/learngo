@@ -49,7 +49,12 @@ func main() {
 	// #3rd way (best):
 	// --------------------------------
 
+	// below are all slice expressions
 	for _, v := range os.Args[1:] {
+		fmt.Printf("%q\n", v)
+	}
+
+	for _, v := range os.Args[:len(os.Args)] {
 		fmt.Printf("%q\n", v)
 	}
 }

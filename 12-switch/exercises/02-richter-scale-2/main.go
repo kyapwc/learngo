@@ -8,6 +8,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Richter Scale #2
 //
@@ -66,5 +72,78 @@ package main
 //   massive's richter scale is 10+
 // ---------------------------------------------------------
 
+// func main() {
+// 	args := os.Args
+//
+// 	if len(args) < 2 {
+// 		fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+// 		return
+// 	}
+//
+// 	// less resource intensive is to use a `map`
+// 	// but its hard for error handling and the list will keep getting larger
+// 	// it would do better to use a switch case
+// 	rictherScale := map[string]string{
+// 		"micro":      "micro's richter scale is less than 2.0",
+// 		"very minor": "very minor's richter scale is 2 - 2.9",
+// 		"minor":      "minor's richter scale is 3 - 3.9",
+// 		"light":      "light's richter scale is 4 - 4.9",
+// 		"moderate":   "moderate's richter scale is 5 - 5.9",
+// 		"strong":     "strong's richter scale is 6 - 6.9",
+// 		"major":      "major's richter scale is 7 - 7.9",
+// 		"great":      "great's richter scale is 8 - 9.9",
+// 		"massive":    "massive's richter scale is 10+",
+// 	}
+//
+// 	value, found := rictherScale[strings.ToLower(args[1])]
+//
+// 	if !found {
+// 		fmt.Printf("%v's richter scale is unknown", args[1])
+// 		return
+// 	}
+//
+// 	fmt.Println(value)
+// }
+
 func main() {
+	args := os.Args
+
+	if len(args) < 2 {
+		fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+		return
+	}
+
+	value := strings.ToLower(args[1])
+
+	if len(value) == 0 {
+		fmt.Println("Tell me the magnitude of the earthquake in human terms.")
+		return
+	}
+
+	var desc string
+
+	switch value {
+	case "micro":
+		desc = "less than 2.0"
+	case "very minor":
+		desc = "2 - 2.9"
+	case "minor":
+		desc = "3 - 3.9"
+	case "light":
+		desc = "4 - 4.9"
+	case "moderate":
+		desc = "5 - 5.9"
+	case "strong":
+		desc = "6 - 6.9"
+	case "major":
+		desc = "5 - 5.9"
+	case "great":
+		desc = "8 - 9.9"
+	case "massive":
+		desc = "10+"
+	default:
+		desc = "unknown"
+	}
+
+	fmt.Printf("%v's richter scale is %v", args[1], desc)
 }

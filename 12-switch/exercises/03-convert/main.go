@@ -41,13 +41,25 @@ func main() {
 	//
 	// REFACTOR THIS TO A SWITCH
 	//
-	if u != user && u != user2 {
+	// if u != user && u != user2 {
+	// 	fmt.Printf(errUser, u)
+	// } else if u == user && p == pass {
+	// 	fmt.Printf(accessOK, u)
+	// } else if u == user2 && p == pass2 {
+	// 	fmt.Printf(accessOK, u)
+	// } else {
+	// 	fmt.Printf(errPwd, u)
+	// }
+
+	switch {
+	case u != user && u != user2:
 		fmt.Printf(errUser, u)
-	} else if u == user && p == pass {
+	case u == user && p == pass:
+		// use  of fallthrough to remove duplicate code of fmt.Printf(accessOK, u)
+		fallthrough
+	case u == user2 && p == pass2:
 		fmt.Printf(accessOK, u)
-	} else if u == user2 && p == pass2 {
-		fmt.Printf(accessOK, u)
-	} else {
+	default:
 		fmt.Printf(errPwd, u)
 	}
 }
